@@ -1,0 +1,9 @@
+PORT=5000
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=root
+DB_NAME=peertut
+JWT_SECRET=QWER1234567TJK4567
+FRONTEND_URL = http://localhost:5173
+EMAIL_USER=kaishik.budur@gmail.com
+EMAIL_PASS=ywfe idra nmak ghrk
