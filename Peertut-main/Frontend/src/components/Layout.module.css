@@ -1,0 +1,11 @@
+/* 
+VENKATA NAGASAI SREERAM AVASARALA-1002246802
+*/
+
+.layout {
+  max-width: 1200px;   /* You can adjust this to control the content width */
+  margin: 0 auto;      /* Centers content horizontally */
+  padding: 0 1rem;     /* Adds side padding for smaller screens */
+  width: 100%;         /* Ensures it occupies full width of its container */
+  box-sizing: border-box;
+}

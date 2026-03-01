@@ -1,0 +1,171 @@
+/* 
+BHARANI BATHULA - 1002202658
+*/
+
+.statsCard {
+  background: var(--color-neutral-50);
+  border-radius: 16px;
+  padding: var(--space-6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-muted);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.statsCard:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.statsCard:focus-within {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.statsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.statsTitle {
+  font-size: clamp(var(--font-size-xs), 1.5vw, var(--font-size-sm));
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  word-break: break-word;
+  flex: 1;
+}
+
+.statsIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(var(--font-size-lg), 2.5vw, var(--font-size-xl));
+  flex-shrink: 0;
+}
+
+.statsBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.statsValue {
+  font-size: clamp(var(--font-size-2xl), 3vw, var(--font-size-3xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1;
+  word-break: break-word;
+}
+
+.statsSuffix {
+  font-size: clamp(var(--font-size-base), 2vw, var(--font-size-lg));
+  color: var(--text-secondary);
+  margin-left: var(--space-1);
+  font-weight: var(--font-weight-semibold);
+}
+
+.statsChange {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: clamp(var(--font-size-xs), 1.5vw, var(--font-size-sm));
+  font-weight: var(--font-weight-semibold);
+  flex-wrap: wrap;
+}
+
+.statsChange.positive {
+  color: var(--color-success);
+}
+
+.statsChange.negative {
+  color: var(--color-error);
+}
+
+.changeLabel {
+  font-size: clamp(10px, 1.2vw, var(--font-size-xs));
+  color: var(--text-muted);
+  font-weight: var(--font-weight-medium);
+  margin-left: var(--space-1);
+}
+
+/* Responsive Design */
+
+/* Extra Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+  .statsCard {
+    padding: var(--space-4);
+  }
+
+  .statsIcon {
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-lg);
+  }
+
+  .statsTitle {
+    font-size: 11px;
+  }
+
+  .statsValue {
+    font-size: var(--font-size-xl);
+  }
+
+  .statsSuffix {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Mobile Landscape (481px - 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+  .statsCard {
+    padding: var(--space-5);
+  }
+}
+
+/* Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+  .statsCard:hover {
+    transform: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .statsCard {
+    border-width: 2px;
+  }
+
+  .statsTitle,
+  .changeLabel {
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .statsCard {
+    transition: none !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .statsCard {
+    box-shadow: none;
+    border: 1px solid var(--border-default);
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

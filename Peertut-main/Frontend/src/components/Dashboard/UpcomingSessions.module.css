@@ -1,0 +1,304 @@
+/*
+BHARANI BATHULA - 1002202658
+*/
+
+.sessionsCard {
+  background: var(--color-neutral-50);
+  border-radius: 16px;
+  padding: var(--space-6);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-muted);
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sessionsCard:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--border-muted);
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.cardHeader h2 {
+  font-size: clamp(var(--font-size-lg), 2.5vw, var(--font-size-xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.headerIcon {
+  color: var(--color-primary-200);
+  font-size: clamp(var(--font-size-lg), 2.5vw, var(--font-size-xl));
+  flex-shrink: 0;
+}
+
+.sessionCount {
+  font-size: clamp(var(--font-size-xs), 1.5vw, var(--font-size-sm));
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+  background: var(--bg-secondary);
+  padding: var(--space-2) var(--space-3);
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.sessionsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sessionItem {
+  padding: var(--space-4);
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border-muted);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sessionItem:hover {
+  background: var(--color-primary-50);
+  border-color: var(--color-primary-200);
+  transform: translateX(4px);
+}
+
+.sessionItem:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+  background: var(--color-primary-50);
+}
+
+.sessionMain {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sessionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.studentInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+  min-width: 0;
+}
+
+.studentAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary-50), var(--color-primary-100));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary-200);
+  font-size: var(--font-size-base);
+  flex-shrink: 0;
+}
+
+.studentDetails {
+  flex: 1;
+  min-width: 0;
+}
+
+.studentName {
+  font-size: clamp(var(--font-size-sm), 1.8vw, var(--font-size-base));
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0 0 var(--space-1) 0;
+  word-break: break-word;
+}
+
+.sessionDate {
+  font-size: clamp(10px, 1.2vw, var(--font-size-xs));
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.sessionBadge {
+  padding: var(--space-2) var(--space-3);
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 20px;
+  font-size: clamp(10px, 1.2vw, var(--font-size-xs));
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sessionMeta {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: clamp(var(--font-size-xs), 1.5vw, var(--font-size-sm));
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.metaIcon {
+  color: var(--color-primary-200);
+  font-size: clamp(var(--font-size-xs), 1.5vw, var(--font-size-sm));
+  flex-shrink: 0;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-4);
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.emptyState p {
+  color: var(--text-secondary);
+  font-size: clamp(var(--font-size-sm), 1.8vw, var(--font-size-base));
+  margin: 0;
+}
+
+/* Responsive Design */
+
+/* Extra Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+  .sessionsCard {
+    padding: var(--space-4);
+  }
+
+  .cardHeader {
+    padding-bottom: var(--space-3);
+  }
+
+  .cardHeader h2 {
+    font-size: var(--font-size-base);
+  }
+
+  .sessionCount {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .sessionItem {
+    padding: var(--space-3);
+  }
+
+  .studentAvatar {
+    width: 36px;
+    height: 36px;
+    font-size: var(--font-size-sm);
+  }
+
+  .sessionBadge {
+    font-size: 9px;
+    padding: 4px 8px;
+  }
+
+  .sessionMeta {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .sessionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sessionBadge {
+    align-self: flex-end;
+  }
+}
+
+/* Mobile Landscape (481px - 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+  .sessionsCard {
+    padding: var(--space-5);
+  }
+}
+
+/* Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+  .sessionItem:hover {
+    transform: none;
+  }
+
+  .sessionItem {
+    min-height: var(--touch-target);
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .sessionsCard,
+  .sessionItem {
+    border-width: 2px;
+  }
+
+  .studentName {
+    font-weight: var(--font-weight-bold);
+  }
+
+  .sessionBadge {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .sessionsCard,
+  .sessionItem {
+    transition: none !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .sessionsCard {
+    box-shadow: none;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .sessionItem:hover {
+    transform: none;
+    background: var(--bg-secondary);
+  }
+
+  .sessionBadge {
+    border: 1px solid currentColor;
+  }
+}

@@ -1,0 +1,58 @@
+/* 
+KAUSHIK BUDUR - 1002224112 
+*/
+
+.stepCircle {
+  width: 7.5rem;  /* 120px */
+  height: 7.5rem; /* 120px */
+  background: linear-gradient(45deg, var(--color-primary-300), var(--color-primary-200));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-neutral-50);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  box-shadow: 0 0.5rem 1.25rem rgba(214, 103, 5, 0.4); /* 8px 20px */
+  border: 0.1875rem solid var(--color-neutral-50); /* 3px */
+  flex-shrink: 0;
+}
+
+.stepNumber {
+  line-height: 1;
+}
+
+/* Tablet (<= 64rem) */
+@media (max-width: 64rem) {
+  .stepCircle {
+    width: 6.25rem;  /* 100px */
+    height: 6.25rem; /* 100px */
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* Mobile (<= 48rem) */
+@media (max-width: 48rem) {
+  .stepCircle {
+    width: 5rem;   /* 80px */
+    height: 5rem;  /* 80px */
+    font-size: var(--font-size-xl);
+  }
+}
+
+/* Small mobile (<= 30rem) */
+@media (max-width: 30rem) {
+  .stepCircle {
+    width: 3.75rem;   /* 60px */
+    height: 3.75rem;  /* 60px */
+    font-size: var(--font-size-lg);
+    border-width: 0.125rem; /* 2px */
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .stepCircle {
+    transition: none;
+  }
+}

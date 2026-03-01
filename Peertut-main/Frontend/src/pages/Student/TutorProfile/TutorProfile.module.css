@@ -1,0 +1,186 @@
+/* 
+VENKATA NAGASAI SREERAM AVASARALA-1002246802
+*/
+
+.profileContainer {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    min-height: 100vh;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.profileHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profileHeader h1 {
+    color: #000000; /* Changed from green to black */
+    font-size: 2rem;
+    margin: 0;
+}
+
+.btnBack {
+    background: #FB9400; /* Changed from green to orange */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btnBack:hover {
+    background: #D26705; /* Changed from darker green to darker orange */
+}
+
+.profileMain {
+    background: white;
+    border: 2px solid #FB9400; /* Changed from green to orange */
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.profileImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profileImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profileInfo h2 {
+    color: #000000; /* Changed from green to black */
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+}
+
+.subjectBadge {
+    background: #FB9400; /* Changed from green to orange */
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.stars {
+    color: #f59e0b; /* Warning color - kept as is */
+    font-size: 1.2rem;
+}
+
+.bio {
+    color: #000000; /* Changed from green to black */
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detail {
+    color: #606060; /* Changed from green to gray */
+    font-size: 1rem;
+}
+
+.otherCourses {
+    background: white;
+    border: 2px solid #FB9400; /* Changed from green to orange */
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.otherCourses h3 {
+    color: #000000; /* Changed from green to black */
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.coursesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.courseCard {
+    background: #FFF6EB; /* Changed from light green to light orange */
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #f6ce97; /* Changed from light green to light orange */
+}
+
+.courseCard h4 {
+    color: #000000; /* Changed from green to black */
+    margin-bottom: 0.5rem;
+}
+
+.coursePrice {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #FB9400; /* Changed from green to orange */
+    margin-bottom: 1rem;
+}
+
+.btnBookCourse {
+    background: #FB9400; /* Changed from green to orange */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btnBookCourse:hover {
+    background: #D26705; /* Changed from darker green to darker orange */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profileContainer {
+        padding: 1rem;
+    }
+
+    .profileMain {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .profileImage {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+
+    .coursesGrid {
+        grid-template-columns: 1fr;
+    }
+}

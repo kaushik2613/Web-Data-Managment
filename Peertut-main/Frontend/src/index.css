@@ -1,0 +1,292 @@
+/* 
+NANTHA KUMAR ASHOK ANAND – 1002224704
+*/
+
+:root {
+  /* Color Palette - Primary */
+  --color-primary-50: #FFF6EB;
+  --color-primary-100: #FFE8C7;
+  --color-primary-400: #f6ce97;
+  --color-primary-200: #FB9400;
+  --color-primary-300: #D26705;
+
+
+  /* Color Palette - Secondary */
+  --color-secondary-50: #eccff9;
+  --color-secondary-100: #d075f7;
+  --color-secondary-200: #57007B;
+
+  /* Neutral Colors */
+  --color-neutral-50: #FFFFFF;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #606060;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #000000;
+
+  /* Semantic Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Background Colors */
+  --bg-primary: var(--color-primary-200);
+  --bg-secondary: var(--color-primary-100);
+  --bg-accent: var(--color-primary-100);
+  --bg-dark: var(--color-neutral-900);
+
+  /* Text Colors */
+  --text-primary: var(--color-neutral-900);
+  --text-secondary: var(--color-neutral-600);
+  --text-muted: var(--color-neutral-400);
+  --text-inverse: var(--color-neutral-50);
+
+  /* Button Colors */
+  --button-primary-bg: var(--color-primary-300);
+
+  /* Border Colors */
+  --border-default: var(--color-neutral-200);
+  --border-muted: var(--color-neutral-100);
+  --border-accent: var(--color-primary-500);
+  --border-focus: var(--color-primary-600);
+
+  /* Typography */
+  --font-family-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-mono: 'Fira Code', 'Consolas', monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+
+/* Spacing Scale - Used throughout components */
+--space-1: 0.25rem;  /* 4px */
+--space-2: 0.5rem;   /* 8px */
+--space-3: 0.75rem;  /* 12px */
+--space-4: 1rem;     /* 16px */
+--space-5: 1.25rem;  /* 20px */
+--space-6: 1.5rem;   /* 24px */
+--space-8: 2rem;     /* 32px */
+--space-12: 3rem;    /* 48px */
+
+/* Breakpoints - Mobile-first responsive design */
+--breakpoint-sm: 640px;   /* Mobile landscape */
+--breakpoint-md: 768px;   /* Tablet portrait */
+--breakpoint-lg: 1024px;  /* Tablet landscape / Desktop */
+--breakpoint-xl: 1280px;  /* Large Desktop */
+
+/* Z-index Scale - Layering system */
+--z-skip-link: 9999;
+--z-modal: 1000;
+--z-navbar: 100;
+--z-dropdown: 50;
+
+/* Focus Indicators - WCAG AA compliance */
+--focus-ring: #2563eb;
+--focus-ring-offset: 2px;
+
+/* Touch Targets - WCAG AA minimum size */
+--touch-target: 44px;
+
+
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-sans);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6,p,ol,ul{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family-sans);
+}
+
+.justify-align-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-between-align-center{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.justify-around{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Add these to your existing index.css */
+
+/* New reusable utility classes */
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-row-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.gap-sm { gap: 0.5rem; }
+.gap-md { gap: 1rem; }
+.gap-lg { gap: 1.5rem; }
+.gap-xl { gap: 2rem; }
+.gap-2xl { gap: 3rem; }
+
+.text-center { text-align: center; }
+.text-uppercase { text-transform: uppercase; }
+
+.w-full { width: 100%; }
+.max-w-sm { max-width: 300px; }
+.max-w-md { max-width: 400px; }
+.max-w-lg { max-width: 500px; }
+
+.p-sm { padding: 0.5rem; }
+.p-md { padding: 1rem; }
+.p-lg { padding: 1.5rem; }
+.p-xl { padding: 2rem; }
+
+.mb-sm { margin-bottom: 0.5rem; }
+.mb-md { margin-bottom: 1rem; }
+.mb-lg { margin-bottom: 1.5rem; }
+.mb-xl { margin-bottom: 2rem; }
+.mb-2xl { margin-bottom: 3rem; }
+
+/* Animation utilities */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Button base styles */
+.btn-base {
+  border: none;
+  border-radius: 12px;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn-base:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-base:active {
+  transform: translateY(-1px);
+}
+
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: var(--space-4);
+  background: var(--color-neutral-900);
+  color: var(--color-neutral-50);
+  padding: var(--space-3) var(--space-4);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  border-radius: 4px;
+  z-index: var(--z-skip-link);
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+  outline: 2px solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Focus styles for accessibility */
+:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,148 @@
+/* 
+DASARADHI BODDU - 1002246641
+*/
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Variants */
+.primary {
+  background: linear-gradient(to right, #1307ba, #ae0090, #dc3871);
+  color: #fff;
+}
+
+.primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(172, 0, 255, 0.3);
+}
+
+.secondary {
+  background: linear-gradient(45deg, var(--color-secondary-100), var(--color-secondary-200));
+  color: var(--color-neutral-50);
+}
+
+.secondary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(87, 0, 123, 0.3);
+}
+
+.tertiary {
+  background: linear-gradient(45deg, var(--color-primary-200), var(--color-primary-300));
+  color: var(--color-neutral-50);
+}
+
+.tertiary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(199, 118, 234, 0.3);
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--color-neutral-50);
+  border: 2px solid var(--color-neutral-50);
+}
+
+.outline:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.outlineDark {
+  background-color: transparent;
+  color: var(--color-neutral-900);
+  border: 2px solid var(--color-neutral-900);
+}
+
+.outlineDark:hover:not(:disabled) {
+  background: rgba(234, 98, 98, 0.05);
+  transform: translateY(-2px);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-primary-200);
+  border: 2px solid transparent;
+}
+
+.ghost:hover:not(:disabled) {
+  background: rgba(251, 148, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Sizes */
+.small {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.medium {
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+}
+
+.large {
+  padding: 1rem 2.25rem;
+  font-size: 1.125rem;
+}
+
+/* States */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.button:disabled:hover {
+  box-shadow: none !important;
+}
+
+.loadingText {
+  opacity: 0.8;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.button:hover:not(:disabled) .icon {
+  transform: translateX(2px);
+}
+
+/* Focus styles for accessibility */
+.button:focus {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Animation for loading state */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.button:disabled.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}

@@ -1,0 +1,171 @@
+/* 
+KAUSHIK BUDUR - 1002224112 
+*/
+
+.footer {
+  background: var(--color-neutral-700);
+  color: var(--color-neutral-50);
+  border-top: 0.1875rem solid var(--color-primary-200);
+  /* 3px */
+}
+
+/* Content wrapper */
+.footerContent {
+  max-width: 75rem;
+  /* 1200px */
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Brand block */
+.brandSection {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.brandName {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-200);
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  color: var(--color-neutral-300);
+  line-height: 1.6;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Contact info row */
+.contactInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contactLabel {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-300);
+}
+
+.contactValue {
+  font-size: var(--font-size-base);
+  color: var(--color-neutral-50);
+}
+
+/* Links (e.g., mailto:) */
+.contactValue a {
+  color: var(--color-neutral-50);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  min-height: var(--touch-target);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.contactValue a:hover {
+  color: var(--color-primary-200);
+  background-color: rgba(251, 148, 0, 0.12);
+  text-decoration: underline;
+}
+
+.contactValue a:focus-visible {
+  outline: 0.125rem solid var(--focus-ring);
+  outline-offset: 0.25rem;
+  text-decoration: none;
+}
+
+/* Bottom bar */
+.footerBottom {
+  border-top: 0.0625rem solid var(--border-default);
+  /* 1px */
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  color: var(--color-neutral-300);
+  font-size: var(--font-size-sm);
+}
+
+.contactLink {
+  color: var(--color-primary-200);
+}
+
+.bottomBar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 2rem;
+  text-align: center;
+
+}
+
+.copyright {
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Tablet and below */
+@media (max-width: 64rem) {
+  .footerContent {
+    padding: 2.5rem 1.5rem;
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 48rem) {
+  .footerContent {
+    flex-direction: column;
+    padding: 2rem 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .contactInfo {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .contactItem {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 30rem) {
+  .footerContent {
+    padding: 1.5rem 1rem;
+  }
+
+  .tagline {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .contactValue a {
+    transition: none;
+  }
+}

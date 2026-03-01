@@ -1,0 +1,182 @@
+/* 
+DASARADHI BODDU - 1002246641
+*/
+
+.sessionsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  width: 100%;
+}
+
+.dateGroup {
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.dateHeader {
+  font-size: clamp(var(--font-size-lg), 3vw, var(--font-size-xl));
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--border-default);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.sessionCount {
+  font-size: clamp(var(--font-size-xs), 1.5vw, var(--font-size-sm));
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  padding: var(--space-2) var(--space-4);
+  border-radius: 20px;
+}
+
+.sessionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-5);
+  width: 100%;
+}
+
+/* Responsive Design */
+
+/* Extra Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+  .sessionsList {
+    gap: var(--space-6);
+  }
+
+  .dateGroup {
+    animation-duration: 0.3s;
+  }
+
+  .dateHeader {
+    font-size: var(--font-size-base);
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: var(--space-4);
+  }
+
+  .sessionCount {
+    font-size: var(--font-size-xs);
+    padding: var(--space-1) var(--space-3);
+  }
+
+  .sessionsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+/* Mobile Landscape (481px - 600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+  .sessionsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .dateHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Small Tablets Portrait (601px - 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+  .sessionsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-5);
+  }
+}
+
+/* Large Tablets Landscape (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sessionsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-5);
+  }
+}
+
+/* Desktop Small (1025px - 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .sessionsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+
+/* Desktop Large (1281px and up) */
+@media (min-width: 1281px) {
+  .sessionsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--space-6);
+  }
+}
+
+/* Tablet Landscape Specific */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .sessionsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+  .dateHeader {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .dateHeader {
+    font-weight: var(--font-weight-semibold);
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .dateGroup {
+    animation: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .sessionsList {
+    gap: var(--space-4);
+  }
+
+  .sessionsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .dateHeader {
+    page-break-after: avoid;
+  }
+
+  .dateGroup {
+    page-break-inside: avoid;
+  }
+}

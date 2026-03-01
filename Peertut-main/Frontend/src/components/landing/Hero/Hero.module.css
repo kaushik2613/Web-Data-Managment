@@ -1,0 +1,186 @@
+/* 
+KAUSHIK BUDUR - 1002224112 
+*/
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: url('https://images.pexels.com/photos/8055488/pexels-photo-8055488.jpeg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-inverse);
+  overflow: hidden;
+  padding: var(--space-8) var(--space-4);
+}
+
+/* Ensure background image has good contrast with text */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(142, 85, 5, 0.65);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+  padding: var(--space-6) var(--space-4);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .content {
+    animation: none;
+  }
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+  color: var(--text-inverse);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.6;
+  margin-bottom: var(--space-8);
+  color: var(--color-neutral-100);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Mobile - Small devices (< 640px) */
+@media (max-width: 639px) {
+  .hero {
+    min-height: 100svh;
+    padding: var(--space-6) var(--space-3);
+  }
+  
+  .content {
+    padding: var(--space-4) var(--space-2);
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: var(--space-3);
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: var(--space-6);
+  }
+  
+  .actions {
+    flex-direction: column;
+    gap: var(--space-3);
+    width: 100%;
+  }
+  
+  .actions > * {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* Tablet - Medium devices (640px - 1023px) */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero {
+    padding: var(--space-8) var(--space-6);
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+/* Desktop - Large devices (>= 1024px) */
+@media (min-width: 1024px) {
+  .hero {
+    padding: var(--space-12) var(--space-8);
+  }
+  
+  .content {
+    padding: var(--space-8);
+  }
+  
+  .title {
+    font-size: 3.5rem;
+    margin-bottom: var(--space-6);
+  }
+  
+  .subtitle {
+    font-size: 1.4rem;
+    margin-bottom: var(--space-8);
+  }
+  
+  .actions {
+    gap: var(--space-6);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .overlay {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .title,
+  .subtitle {
+    text-shadow: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: var(--space-2);
+  }
+}
+
+/* Print styles */
+@media print {
+  .hero {
+    min-height: auto;
+    background: white;
+    color: black;
+    page-break-after: always;
+  }
+  
+  .overlay {
+    display: none;
+  }
+  
+  .actions {
+    display: none;
+  }
+}

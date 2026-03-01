@@ -1,0 +1,355 @@
+/* 
+BHARANI BATHULA - 1002202658
+*/
+
+.dashboardWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fafafa;
+  color: #1f2937;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.dashboardHeader {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.dashboardHeader h1 {
+  color: #000000;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.dashboardHeader p {
+  color: #4b5563;
+  font-size: 1.15rem;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 5px solid;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.statCard:hover,
+.statCard:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  outline-offset: 3px;
+  outline-color: #fb9400;
+  outline-style: solid;
+}
+
+.statIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background-color: #fef4e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.statContent {
+  flex: 1;
+}
+
+.statLabel {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.statValue {
+  color: #000000;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Dashboard Grid */
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.studyPlansSection,
+.upcomingSessionsSection {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.studyPlansSection h2,
+.upcomingSessionsSection h2 {
+  color: #000000;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Plans List */
+.plansList {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-right: 0.5rem;
+}
+
+/* Custom scrollbar */
+.plansList::-webkit-scrollbar {
+  width: 8px;
+}
+.plansList::-webkit-scrollbar-thumb {
+  background-color: #fb9400cc;
+  border-radius: 10px;
+}
+
+/* Plan Card */
+.planCard {
+  padding: 1.2rem;
+  background: #fff6eb;
+  border-radius: 8px;
+  border-left: 4px solid #fb9400;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.planCard:hover,
+.planCard:focus-visible {
+  background: #ffe8c7;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  outline-offset: 2px;
+  outline-color: #fb9400;
+  outline-style: solid;
+}
+
+.planHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.planHeader h3 {
+  color: #000000;
+  font-size: 1.1rem;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.planStatus {
+  padding: 0.4rem 0.8rem;
+  color: #ffffff;
+  font-size: 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.planStatus {
+  background-color: #fb9400; /* Use your thematic orange here */
+}
+
+.planProgressLabel {
+  color: #666666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+  background-color: #fb9400;
+}
+
+.planMeta {
+  color: #666666;
+  font-size: 0.85rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Sessions List */
+.sessionsList {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-right: 0.5rem;
+}
+
+.sessionsList::-webkit-scrollbar {
+  width: 8px;
+}
+.sessionsList::-webkit-scrollbar-thumb {
+  background-color: #fb9400cc;
+  border-radius: 10px;
+}
+
+.sessionPreview {
+  padding: 1.2rem;
+  background: #fff6eb;
+  border-radius: 8px;
+  border-left: 4px solid #fb9400;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.sessionPreviewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.sessionPreviewHeader h4 {
+  color: #000000;
+  font-size: 1rem;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.sessionPreviewHeader time {
+  color: #666666;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.sessionTutor {
+  color: #666666;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  font-weight: 400;
+}
+
+/* Button Secondary */
+.btnSecondary {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: #fb9400;
+  border: 1px solid #fb9400;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-height: 36px;
+  user-select: none;
+}
+
+.btnSecondary:hover,
+.btnSecondary:focus-visible {
+  background: #fb9400;
+  color: white;
+  outline-offset: 2px;
+  outline-color: #fb9400;
+  outline-style: solid;
+  text-decoration: none;
+}
+
+/* Session Details Inline */
+.sessionDetails {
+  background: #faf6f1;
+  border: 1px solid #fb940099;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  box-shadow: 0 1px 8px rgb(251 148 0 / 0.3);
+}
+
+.sessionDetails h2 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+  color: #111827;
+  user-select: none;
+}
+
+.sessionDetails p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: #444444;
+  user-select: text;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+  .statCard,
+  .studyPlansSection,
+  .upcomingSessionsSection {
+    border: 2px solid #000;
+  }
+  .btnSecondary {
+    border-width: 2px;
+  }
+}

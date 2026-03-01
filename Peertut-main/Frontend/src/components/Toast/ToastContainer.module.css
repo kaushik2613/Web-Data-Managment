@@ -1,0 +1,18 @@
+/* 
+NANTHA KUMAR ASHOK ANAND – 1002224704 
+*/
+
+.toastContainer {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .toastContainer {
+    top: 0.5rem;
+    right: 0.5rem;
+    left: 0.5rem;
+  }
+}
